@@ -15,5 +15,4 @@ type SitesModel struct {
 	UserName     string             `bson:"userName" json:"userName"`
 	SitePassword string             `bson:"sitePassword" json:"sitePassword"`
 	Notes        string             `bson:"	notes" json:"notes"`
-	ImageResId   string             `bson:"	imageResId" json:"imageResId"`
 }
