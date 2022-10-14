@@ -173,3 +173,31 @@
 {"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: illegal base64 data at input byte 3","time":"14-10-2022 13:52:02"}
 {"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: tokenstring should not contain 'bearer '","time":"14-10-2022 13:52:32"}
 {"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: illegal base64 data at input byte 5","time":"14-10-2022 13:54:32"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"14-10-2022 14:33:25"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"14-10-2022 14:34:18"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: tokenstring should not contain 'bearer '","time":"14-10-2022 14:41:14"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: tokenstring should not contain 'bearer '","time":"14-10-2022 14:45:14"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: tokenstring should not contain 'bearer '","time":"14-10-2022 14:46:07"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: tokenstring should not contain 'bearer '","time":"14-10-2022 15:07:54"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: tokenstring should not contain 'bearer '","time":"14-10-2022 15:07:58"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: tokenstring should not contain 'bearer '","time":"14-10-2022 15:13:28"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: tokenstring should not contain 'bearer '","time":"14-10-2022 15:21:06"}
+{"level":"error","msg":"func GetSitebyURL: Error in mongo: no documents in result","time":"14-10-2022 15:46:06"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"14-10-2022 15:47:09"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: illegal base64 data at input byte 5","time":"14-10-2022 15:50:44"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: illegal base64 data at input byte 5","time":"14-10-2022 15:50:56"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: illegal base64 data at input byte 5","time":"14-10-2022 15:53:28"}
+{"level":"error","msg":"func GetSitebyURL: Error in mongo: no documents in result","time":"14-10-2022 16:04:49"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"14-10-2022 16:04:56"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"14-10-2022 16:05:33"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"14-10-2022 16:11:26"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"14-10-2022 16:19:44"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"14-10-2022 16:19:51"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"14-10-2022 16:20:02"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"14-10-2022 16:24:53"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"14-10-2022 16:25:27"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"14-10-2022 16:25:34"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"14-10-2022 16:25:54"}
+{"level":"error","msg":"Decrypt: Error in DecodeString. Error: illegal base64 data at input byte 3","time":"14-10-2022 16:36:20"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"14-10-2022 17:10:46"}
+{"level":"error","msg":"func GetSitebyURL: Error in mongo: no documents in result","time":"14-10-2022 17:10:55"}

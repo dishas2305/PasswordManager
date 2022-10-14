@@ -16,6 +16,20 @@ import (
 	// "golang.org/x/text/message"
 )
 
+// AddSite godoc
+// @Summary Adds site ....
+// @Description Adds Site
+// @Tags Users
+// @Accept  json
+// @Produce json
+// @Success 200 {object} utils.SuccessContent{data=config.MsgSiteAdded }
+// @Failure 400 {object} utils.ErrorContent
+// @Failure 404 {object} utils.ErrorContent
+// @Failure 500 {object} utils.ErrorContent
+// @Router /customers [post]
+// @Security XAccessToken
+// @Security CustomerBasicAuth
+
 func AddSite(c echo.Context) error {
 	uId := c.Param("userId")
 	fmt.Println(uId)
@@ -42,6 +56,20 @@ func AddSite(c echo.Context) error {
 	return utils.HttpSuccessResponse(c, http.StatusOK, map[string]string{"message": config.MsgSiteAdded})
 }
 
+// ListSite godoc
+// @Summary lists all  sites ....
+// @Description lists all Sites
+// @Tags Users
+// @Accept  json
+// @Produce json
+// @Success 200 {object} utils.SuccessContent{data=[]models.SitesModel }
+// @Failure 400 {object} utils.ErrorContent
+// @Failure 404 {object} utils.ErrorContent
+// @Failure 500 {object} utils.ErrorContent
+// @Router /customers [get]
+// @Security XAccessToken
+// @Security CustomerBasicAuth
+
 func ListSites(c echo.Context) error {
 	sr := services.SitesReceiver{}
 	sites, err := sr.ListSites()
@@ -52,6 +80,20 @@ func ListSites(c echo.Context) error {
 
 	return utils.HttpSuccessResponse(c, http.StatusOK, sites)
 }
+
+// CopyPassword godoc
+// @Summary Copies password ....
+// @Description Copies passwords
+// @Tags Users
+// @Accept  json
+// @Produce json
+// @Success 200 {object} utils.SuccessContent{data=types.CopyPasswordResponse }
+// @Failure 400 {object} utils.ErrorContent
+// @Failure 404 {object} utils.ErrorContent
+// @Failure 500 {object} utils.ErrorContent
+// @Router /customers [get]
+// @Security XAccessToken
+// @Security CustomerBasicAuth
 
 func CopyPassword(c echo.Context) error {
 	fmt.Println("insde copy password")
@@ -70,6 +112,20 @@ func CopyPassword(c echo.Context) error {
 	return utils.HttpSuccessResponse(c, http.StatusOK, result)
 
 }
+
+// EditSite godoc
+// @Summary edits site ....
+// @Description edits site
+// @Tags Users
+// @Accept  json
+// @Produce json
+// @Success 200 {object} utils.SuccessContent{data=config.MsgSiteUpdated}
+// @Failure 400 {object} utils.ErrorContent
+// @Failure 404 {object} utils.ErrorContent
+// @Failure 500 {object} utils.ErrorContent
+// @Router /customers [get]
+// @Security XAccessToken
+// @Security CustomerBasicAuth
 
 func EditSite(c echo.Context) error {
 	site := c.Param("sitename")

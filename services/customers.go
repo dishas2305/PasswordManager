@@ -46,6 +46,11 @@ func CreateUser(c *types.CustomerPayload) (interface{}, error) {
 		logger.Error("func_CreateUser: ", err)
 		return nil, err
 	}
+	// token, err := GenerateToken(um)
+	// if err != nil {
+	// 	logger.Error("GenerateToken: Error in generating the token Error: ", err)
+	// 	return nil, err
+	// }
 	return nil, nil
 }
 

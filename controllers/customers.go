@@ -12,9 +12,21 @@ import (
 
 	"github.com/labstack/echo/v4"
 	logger "github.com/sirupsen/logrus"
-	// "go.mongodb.org/mongo-driver/bson/primitive"
-	// "golang.org/x/text/message"
 )
+
+// CreateUser godoc
+// @Summary Creates new users....
+// @Description create user
+// @Tags Users
+// @Accept  json
+// @Produce json
+// @Success 200 {object} utils.SuccessContent{data=[]models.CustomerModels}
+// @Failure 400 {object} utils.ErrorContent
+// @Failure 404 {object} utils.ErrorContent
+// @Failure 500 {object} utils.ErrorContent
+// @Router /customers [post]
+// @Security XAccessToken
+// @Security CustomerBasicAuth
 
 func CreateUser(c echo.Context) error {
 	fmt.Println("inside controllers create user")
@@ -54,7 +66,7 @@ func CreateUser(c echo.Context) error {
 
 	_, err = services.GetUserByMobileNumber(user.Phone)
 	if err == nil {
-		logger.Error("func_CreateCustomer: Record found:", err)
+		logger.Error("func_CreateUser: Record found:", err)
 		return utils.HttpErrorResponse(c, utils.GetStatusCode(config.ErrDuplicateCustomer), config.ErrDuplicateCustomer)
 	}
 
@@ -67,6 +79,20 @@ func CreateUser(c echo.Context) error {
 	return utils.HttpSuccessResponse(c, http.StatusOK, config.MsgUserCreated)
 
 }
+
+// Login godoc
+// @Summary Logs in users....
+// @Description Log in for user
+// @Tags Users
+// @Accept  json
+// @Produce json
+// @Success 200 {object} utils.SuccessContent{data=[]models.CustomerModels}
+// @Failure 400 {object} utils.ErrorContent
+// @Failure 404 {object} utils.ErrorContent
+// @Failure 500 {object} utils.ErrorContent
+// @Router /customers [get]
+// @Security XAccessToken
+// @Security CustomerBasicAuth
 
 func Login(c echo.Context) error {
 	body := &types.LoginBody{}
@@ -89,6 +115,20 @@ func Login(c echo.Context) error {
 	return utils.HttpSuccessResponse(c, http.StatusOK, result)
 }
 
+// ForgotPassword godoc
+// @Summary Generates OTP ....
+// @Description generates OTP
+// @Tags Users
+// @Accept  json
+// @Produce json
+// @Success 200 {object} utils.SuccessContent{data= models.ForgotPasswordResponse}
+// @Failure 400 {object} utils.ErrorContent
+// @Failure 404 {object} utils.ErrorContent
+// @Failure 500 {object} utils.ErrorContent
+// @Router /customers [post]
+// @Security XAccessToken
+// @Security CustomerBasicAuth
+
 func ForgotPassword(c echo.Context) error {
 	fmt.Println("inside cntrller")
 	body := &types.ForgotPasswordBody{}
@@ -105,6 +145,20 @@ func ForgotPassword(c echo.Context) error {
 	return utils.HttpSuccessResponse(c, http.StatusOK, result)
 
 }
+
+// ResetPassword godoc
+// @Summary Resets password ....
+// @Description Resets password
+// @Tags Users
+// @Accept  json
+// @Produce json
+// @Success 200 {object} utils.SuccessContent{data= models.ResetPasswordResponse}
+// @Failure 400 {object} utils.ErrorContent
+// @Failure 404 {object} utils.ErrorContent
+// @Failure 500 {object} utils.ErrorContent
+// @Router /customers [put]
+// @Security XAccessToken
+// @Security CustomerBasicAuth
 
 func ResetPassword(c echo.Context) error {
 	fmt.Println("inside reset password")
@@ -127,7 +181,7 @@ func ResetPassword(c echo.Context) error {
 	fmt.Println(result)
 	comp := utils.CheckMPin(body.NewMPin, body.NewReMPin)
 	if comp != 0 {
-		logger.Error("func_CreateUser: Error: ", config.ErrMPinDoNotMatch)
+		logger.Error("func_ResetPassword: Error: ", config.ErrMPinDoNotMatch)
 		return utils.HttpErrorResponse(c, http.StatusBadRequest, config.ErrMPinDoNotMatch)
 	}
 	errr := services.UpdateMPin(userId, body.NewMPin)

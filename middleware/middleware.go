@@ -1,12 +1,10 @@
 package middleware
 
 import (
-	"passmanager/config"
-	// "strconv"
-	// "cities/services"
 	"fmt"
 	"net/http"
 	"os"
+	"passmanager/config"
 	"passmanager/utils"
 
 	"github.com/dgrijalva/jwt-go"
@@ -17,7 +15,6 @@ import (
 func ValidateCustomerToken(next echo.HandlerFunc) echo.HandlerFunc {
 	return func(c echo.Context) error {
 		_, err := ExtractCustomerTokenID(c)
-		fmt.Println("err--------------------------------------------------------")
 		if err != nil {
 			return utils.HttpErrorResponse(c, http.StatusUnauthorized, config.ErrHttpCallUnauthorized)
 		}
@@ -32,7 +29,7 @@ func ExtractCustomerTokenID(c echo.Context) (string, error) {
 		return "", config.ErrTokenMissing
 	}
 
-	token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
+	token, _ := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
 		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 			logger.Error("func_ValidateCustomerToken: Error in jwt token method. Error: ")
 			return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
@@ -41,10 +38,6 @@ func ExtractCustomerTokenID(c echo.Context) (string, error) {
 	})
 
 	fmt.Println("token:", token)
-	if err != nil {
-		logger.Error("func_ValidateCustomerToken: Error in jwt parse. Error: ", err)
-		return "", err
-	}
 	claims, ok := token.Claims.(jwt.MapClaims)
 	fmt.Println("claims", claims)
 	fmt.Println("token", token.Valid)
