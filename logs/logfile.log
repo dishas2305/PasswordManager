@@ -1,0 +1,175 @@
+{"level":"error","msg":"func_CreateCustomer: Error :Invalid mobile number","time":"10-10-2022 15:12:44"}
+{"level":"error","msg":"func_CreateCustomer: Error :Invalid mobile number","time":"10-10-2022 15:13:00"}
+{"level":"error","msg":"func_CreateCustomer: Error :Invalid mobile number","time":"10-10-2022 15:21:37"}
+{"level":"error","msg":"func_CreateCustomer: Error :Invalid mobile number","time":"10-10-2022 15:21:46"}
+{"level":"error","msg":"func_CreateCustomer: Error :Invalid mobile number","time":"10-10-2022 15:21:51"}
+{"level":"error","msg":"func_CreateCustomer: Error :Invalid mobile number","time":"10-10-2022 15:21:58"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"10-10-2022 15:27:44"}
+{"level":"info","msg":"Send an email","time":"10-10-2022 15:27:44"}
+{"level":"info","msg":"Get client for aws-ses email","time":"10-10-2022 15:27:44"}
+{"level":"error","msg":"InvalidParameter: 1 validation error(s) found.\n- missing required field, SendTemplatedEmailInput.Template.\n","time":"10-10-2022 15:27:44"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"10-10-2022 15:29:50"}
+{"level":"info","msg":"Send an email","time":"10-10-2022 15:29:50"}
+{"level":"info","msg":"Get client for aws-ses email","time":"10-10-2022 15:29:50"}
+{"level":"error","msg":"InvalidParameter: 1 validation error(s) found.\n- missing required field, SendTemplatedEmailInput.Template.\n","time":"10-10-2022 15:29:50"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"10-10-2022 15:59:26"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"10-10-2022 15:59:41"}
+{"level":"error","msg":"func_CreateCustomer: Error :Invalid mobile number","time":"10-10-2022 16:51:05"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"10-10-2022 16:51:26"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"10-10-2022 16:51:55"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"10-10-2022 16:52:55"}
+{"level":"error","msg":"Login: Error in binding. Error: code=400, message=Syntax error: offset=79, error=invalid character '}' looking for beginning of object key string, internal=invalid character '}' looking for beginning of object key string","time":"10-10-2022 16:54:11"}
+{"level":"error","msg":"Login: Error in login. Error:  Email not verified","time":"10-10-2022 16:54:18"}
+{"level":"error","msg":"func_CreateCustomer: Error in binding. Error: code=400, message=Syntax error: offset=172, error=invalid character '}' looking for beginning of object key string, internal=invalid character '}' looking for beginning of object key string","time":"11-10-2022 09:59:08"}
+{"level":"error","msg":"func_CreateCustomer: Error :Invalid mobile number","time":"11-10-2022 09:59:16"}
+{"level":"error","msg":"func_CreateCustomer: Error :Invalid mobile number","time":"11-10-2022 10:06:34"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"11-10-2022 10:09:40"}
+{"level":"info","msg":"Send an email","time":"11-10-2022 10:09:40"}
+{"level":"info","msg":"Get client for aws-ses email","time":"11-10-2022 10:09:40"}
+{"level":"info","msg":"inside SendRawTemplateEmail mail status {\n\n} InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: 0692a3c0-5e80-469f-9526-0e33bf27b66c","time":"11-10-2022 10:09:40"}
+{"level":"error","msg":"InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: 0692a3c0-5e80-469f-9526-0e33bf27b66c","time":"11-10-2022 10:09:40"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"11-10-2022 10:24:48"}
+{"level":"info","msg":"Send an email","time":"11-10-2022 10:24:48"}
+{"level":"info","msg":"Get client for aws-ses email","time":"11-10-2022 10:24:48"}
+{"level":"info","msg":"inside SendRawTemplateEmail mail status {\n\n} InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: 570f20f8-d313-4b99-a574-0529c0a0e54d","time":"11-10-2022 10:24:48"}
+{"level":"error","msg":"InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: 570f20f8-d313-4b99-a574-0529c0a0e54d","time":"11-10-2022 10:24:48"}
+{"level":"error","msg":"uppercase letter missing","time":"11-10-2022 14:55:38"}
+{"level":"error","msg":"func_CreateCustomer: is password valid. Error: uppercase letter missing","time":"11-10-2022 14:55:38"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"11-10-2022 14:55:45"}
+{"level":"info","msg":"Send an email","time":"11-10-2022 14:55:45"}
+{"level":"info","msg":"Get client for aws-ses email","time":"11-10-2022 14:55:45"}
+{"level":"info","msg":"inside SendRawTemplateEmail mail status {\n\n} InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: 696effc6-d5d9-4895-b48b-af27c12d9618","time":"11-10-2022 14:55:45"}
+{"level":"error","msg":"InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: 696effc6-d5d9-4895-b48b-af27c12d9618","time":"11-10-2022 14:55:45"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"11-10-2022 15:00:50"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"11-10-2022 15:00:59"}
+{"level":"info","msg":"Send an email","time":"11-10-2022 15:00:59"}
+{"level":"info","msg":"Get client for aws-ses email","time":"11-10-2022 15:00:59"}
+{"level":"info","msg":"inside SendRawTemplateEmail mail status {\n\n} InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: 83b3072d-161d-498a-8e16-ae52172763f4","time":"11-10-2022 15:00:59"}
+{"level":"error","msg":"InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: 83b3072d-161d-498a-8e16-ae52172763f4","time":"11-10-2022 15:00:59"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"11-10-2022 15:02:31"}
+{"level":"info","msg":"Send an email","time":"11-10-2022 15:02:31"}
+{"level":"info","msg":"Get client for aws-ses email","time":"11-10-2022 15:02:31"}
+{"level":"info","msg":"inside SendRawTemplateEmail mail status {\n\n} InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: d7bf0c8c-5938-4e92-8513-82c97cc7e72b","time":"11-10-2022 15:02:31"}
+{"level":"error","msg":"InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: d7bf0c8c-5938-4e92-8513-82c97cc7e72b","time":"11-10-2022 15:02:31"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"11-10-2022 15:09:22"}
+{"level":"info","msg":"Send an email","time":"11-10-2022 15:09:22"}
+{"level":"info","msg":"Get client for aws-ses email","time":"11-10-2022 15:09:22"}
+{"level":"info","msg":"inside SendRawTemplateEmail mail status {\n\n} InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: f1db5106-9fd0-4495-820a-0785085e7f18","time":"11-10-2022 15:09:23"}
+{"level":"error","msg":"InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: f1db5106-9fd0-4495-820a-0785085e7f18","time":"11-10-2022 15:09:23"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"11-10-2022 15:10:27"}
+{"level":"info","msg":"Send an email","time":"11-10-2022 15:10:27"}
+{"level":"info","msg":"Get client for aws-ses email","time":"11-10-2022 15:10:27"}
+{"level":"info","msg":"inside SendRawTemplateEmail mail status {\n\n} InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: adbd9a03-8914-4b79-a8cc-23cab540561c","time":"11-10-2022 15:10:28"}
+{"level":"error","msg":"InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: adbd9a03-8914-4b79-a8cc-23cab540561c","time":"11-10-2022 15:10:28"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"11-10-2022 15:14:47"}
+{"level":"info","msg":"Send an email","time":"11-10-2022 15:14:47"}
+{"level":"info","msg":"Get client for aws-ses email","time":"11-10-2022 15:14:47"}
+{"level":"info","msg":"inside SendRawTemplateEmail mail status {\n\n} InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: b5335426-1f65-4aaa-bd91-8fdcd9dd49c8","time":"11-10-2022 15:14:47"}
+{"level":"error","msg":"InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: b5335426-1f65-4aaa-bd91-8fdcd9dd49c8","time":"11-10-2022 15:14:47"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"11-10-2022 15:19:08"}
+{"level":"info","msg":"Send an email","time":"11-10-2022 15:19:08"}
+{"level":"info","msg":"Get client for aws-ses email","time":"11-10-2022 15:19:08"}
+{"level":"info","msg":"inside SendRawTemplateEmail mail status {\n\n} InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: d3df493b-78cc-47ba-a45e-bb6a2bf395a6","time":"11-10-2022 15:19:08"}
+{"level":"error","msg":"InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: d3df493b-78cc-47ba-a45e-bb6a2bf395a6","time":"11-10-2022 15:19:08"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"11-10-2022 16:29:45"}
+{"level":"info","msg":"Send an email","time":"11-10-2022 16:29:45"}
+{"level":"info","msg":"Get client for aws-ses email","time":"11-10-2022 16:29:45"}
+{"level":"info","msg":"inside SendRawTemplateEmail mail status {\n\n} InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: c6c5e483-4012-4ba8-aa2a-6813034ec41c","time":"11-10-2022 16:29:46"}
+{"level":"error","msg":"InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: c6c5e483-4012-4ba8-aa2a-6813034ec41c","time":"11-10-2022 16:29:46"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"12-10-2022 09:32:42"}
+{"level":"info","msg":"Send an email","time":"12-10-2022 09:32:42"}
+{"level":"info","msg":"Get client for aws-ses email","time":"12-10-2022 09:32:42"}
+{"level":"info","msg":"inside SendRawTemplateEmail mail status {\n\n} InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: c14fd2eb-596b-4497-8fe2-ba5a8cce5049","time":"12-10-2022 09:32:43"}
+{"level":"error","msg":"InvalidClientTokenId: The security token included in the request is invalid.\n\tstatus code: 403, request id: c14fd2eb-596b-4497-8fe2-ba5a8cce5049","time":"12-10-2022 09:32:43"}
+{"level":"error","msg":"func_CreateUser: Error: Invalid mobile number","time":"12-10-2022 13:44:43"}
+{"level":"error","msg":"func_CreateCustomer: Error :Invalid mobile number","time":"12-10-2022 13:47:32"}
+{"level":"error","msg":"func_CreateCustomer: Error :Invalid mobile number","time":"12-10-2022 13:49:29"}
+{"level":"error","msg":"func_CreateCustomer: Error :Invalid mobile number","time":"12-10-2022 13:50:21"}
+{"level":"error","msg":"func_CreateCustomer: Error :Invalid mobile number","time":"12-10-2022 13:57:32"}
+{"level":"error","msg":"MPin cannot conatin character","time":"12-10-2022 14:08:01"}
+{"level":"error","msg":"func_CreateUser: Error: MPin cannot conatin character","time":"12-10-2022 14:08:01"}
+{"level":"error","msg":"MPin cannot conatin character","time":"12-10-2022 14:08:30"}
+{"level":"error","msg":"func_CreateUser: Error: MPin cannot conatin character","time":"12-10-2022 14:08:30"}
+{"level":"error","msg":"numeric character required","time":"12-10-2022 14:08:36"}
+{"level":"error","msg":"func_CreateUser: Error: numeric character required","time":"12-10-2022 14:08:36"}
+{"level":"error","msg":"MPin cannot conatin character","time":"12-10-2022 14:08:54"}
+{"level":"error","msg":"MPin cannot conatin special character","time":"12-10-2022 14:08:54"}
+{"level":"error","msg":"func_CreateUser: Error: MPin cannot conatin character, MPin cannot conatin special character","time":"12-10-2022 14:08:54"}
+{"level":"error","msg":"MPin cannot conatin character","time":"12-10-2022 14:24:27"}
+{"level":"error","msg":"MPin cannot conatin special character","time":"12-10-2022 14:24:27"}
+{"level":"error","msg":"func_CreateUser: Error: MPin cannot conatin character, MPin cannot conatin special character, MPin length must be between 0 digits long","time":"12-10-2022 14:24:27"}
+{"level":"error","msg":"numeric character required","time":"12-10-2022 14:24:34"}
+{"level":"error","msg":"func_CreateUser: Error: numeric character required","time":"12-10-2022 14:24:34"}
+{"level":"error","msg":"func_CreateUser: Error: MPin length must be between 0 digits long","time":"12-10-2022 14:24:38"}
+{"level":"error","msg":"func_CreateUser: Error: MPin length must be between 4 digits long","time":"12-10-2022 14:25:49"}
+{"level":"error","msg":"func_CreateUser: Error: MPin length must be between 4 digits long","time":"12-10-2022 14:25:55"}
+{"level":"error","msg":"func_CreateUser: Error: MPins do not match","time":"12-10-2022 14:25:58"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"12-10-2022 14:28:03"}
+{"level":"error","msg":"func_GetUserByMobileNumber: Error in mongo: no documents in result","time":"12-10-2022 14:28:12"}
+{"level":"error","msg":"func_CreateUser: Error in create user: mongo: no documents in result","time":"12-10-2022 14:28:12"}
+{"level":"error","msg":"func_GetUserByMobileNumber: Error in mongo: no documents in result","time":"12-10-2022 14:28:31"}
+{"level":"error","msg":"func_CreateUser: Error in create user: mongo: no documents in result","time":"12-10-2022 14:28:31"}
+{"level":"error","msg":"func_GetUserByMobileNumber: Error in mongo: no documents in result","time":"12-10-2022 14:29:32"}
+{"level":"error","msg":"func_CreateUser: Error in create user: mongo: no documents in result","time":"12-10-2022 14:29:32"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"12-10-2022 14:35:53"}
+{"level":"error","msg":"func_CreateUser: Error in create user: mongo: no documents in result","time":"12-10-2022 14:35:53"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"12-10-2022 14:37:51"}
+{"level":"error","msg":"func_CreateUser: Error in create user: mongo: no documents in result","time":"12-10-2022 14:37:51"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"12-10-2022 14:37:59"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"12-10-2022 14:40:43"}
+{"level":"error","msg":"func_CreateUser: Error in create user: mongo: no documents in result","time":"12-10-2022 14:40:43"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"12-10-2022 14:49:42"}
+{"level":"error","msg":"func_CreateUser: Error in create user: mongo: no documents in result","time":"12-10-2022 14:49:42"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"12-10-2022 14:49:46"}
+{"level":"error","msg":"func_CreateUser: Error in create user: mongo: no documents in result","time":"12-10-2022 14:49:46"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"12-10-2022 14:49:59"}
+{"level":"error","msg":"func_CreateUser: Error in create user: mongo: no documents in result","time":"12-10-2022 14:49:59"}
+{"level":"error","msg":"func_CreateUser: Error: MPins do not match","time":"12-10-2022 14:52:13"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"12-10-2022 14:52:19"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"12-10-2022 14:52:29"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"12-10-2022 14:52:36"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid MPin","time":"12-10-2022 15:29:50"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"12-10-2022 15:30:44"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid MPin","time":"12-10-2022 15:31:03"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid MPin","time":"12-10-2022 15:31:12"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid MPin","time":"12-10-2022 15:31:21"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid MPin","time":"12-10-2022 15:36:09"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid MPin","time":"12-10-2022 15:36:28"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: token contains an invalid number of segments","time":"13-10-2022 10:34:27"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: token contains an invalid number of segments","time":"13-10-2022 10:35:07"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: token contains an invalid number of segments","time":"13-10-2022 10:36:02"}
+{"level":"error","msg":"Reset Password  Invalid OTP","time":"13-10-2022 12:34:46"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"13-10-2022 14:44:56"}
+{"level":"error","msg":"func_AddSitethe provided hex string is not a valid ObjectID","time":"13-10-2022 15:05:04"}
+{"level":"error","msg":"func_AddSite:  the provided hex string is not a valid ObjectID","time":"13-10-2022 15:05:04"}
+{"level":"error","msg":"func_AddSitethe provided hex string is not a valid ObjectID","time":"13-10-2022 15:10:57"}
+{"level":"error","msg":"func_AddSite:  the provided hex string is not a valid ObjectID","time":"13-10-2022 15:10:57"}
+{"level":"error","msg":"func_AddSitethe provided hex string is not a valid ObjectID","time":"13-10-2022 15:16:26"}
+{"level":"error","msg":"func_AddSite:  the provided hex string is not a valid ObjectID","time":"13-10-2022 15:16:26"}
+{"level":"error","msg":"func_AddSitethe provided hex string is not a valid ObjectID","time":"13-10-2022 15:18:02"}
+{"level":"error","msg":"func_AddSite:  the provided hex string is not a valid ObjectID","time":"13-10-2022 15:18:02"}
+{"level":"error","msg":"func_AddSitethe provided hex string is not a valid ObjectID","time":"13-10-2022 15:23:29"}
+{"level":"error","msg":"func_AddSite:  the provided hex string is not a valid ObjectID","time":"13-10-2022 15:23:29"}
+{"level":"error","msg":"func_AddSitethe provided hex string is not a valid ObjectID","time":"13-10-2022 15:23:38"}
+{"level":"error","msg":"func_AddSite:  the provided hex string is not a valid ObjectID","time":"13-10-2022 15:23:38"}
+{"level":"error","msg":"func GetSitebyURL: Error in mongo: no documents in result","time":"13-10-2022 15:57:13"}
+{"level":"error","msg":"func GetSitebyURL: Error in mongo: no documents in result","time":"13-10-2022 15:57:19"}
+{"level":"error","msg":"func GetSitebyURL: Error in mongo: no documents in result","time":"14-10-2022 09:14:53"}
+{"level":"error","msg":"func GetSitebyURL: Error in mongo: no documents in result","time":"14-10-2022 09:14:59"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"14-10-2022 09:18:57"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"14-10-2022 11:33:32"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"14-10-2022 11:33:44"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"14-10-2022 11:34:54"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"14-10-2022 11:38:01"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"14-10-2022 11:38:08"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid MPin","time":"14-10-2022 11:38:37"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"14-10-2022 12:46:28"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"14-10-2022 12:46:31"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: Token is expired","time":"14-10-2022 12:48:20"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: tokenstring should not contain 'bearer '","time":"14-10-2022 13:44:52"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: tokenstring should not contain 'bearer '","time":"14-10-2022 13:46:49"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: tokenstring should not contain 'bearer '","time":"14-10-2022 13:48:19"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: tokenstring should not contain 'bearer '","time":"14-10-2022 13:49:59"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: illegal base64 data at input byte 3","time":"14-10-2022 13:52:02"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: tokenstring should not contain 'bearer '","time":"14-10-2022 13:52:32"}
+{"level":"error","msg":"func_ValidateCustomerToken: Error in jwt parse. Error: illegal base64 data at input byte 5","time":"14-10-2022 13:54:32"}
