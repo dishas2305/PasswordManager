@@ -90,9 +90,14 @@ func Login(payload types.LoginBody) (types.LoginOutput, error) {
 			return loginOutput, err
 		}
 		loginOutput.Phone = user.Phone
-
 		loginOutput.Id = user.ID
 		loginOutput.Token = token
+		rtoken, err := GenerateRefreshToken(user)
+		if err != nil {
+			logger.Error("GenerateToken: Error in generating the token Error: ", err)
+			return loginOutput, err
+		}
+		loginOutput.RefreshToken = rtoken.Token
 
 		return loginOutput, nil
 	} else {
@@ -120,7 +125,7 @@ func ForgotPassword(payload types.ForgotPasswordBody) (types.ForgotPasswordRespo
 	filter := bson.M{
 		"phone": user.Phone,
 	}
-	update := bson.M{"$set": bson.M{"OTP": encOTP}}
+	update := bson.M{"$set": bson.M{"otp": encOTP}}
 
 	_, err = mdb.Collection(models.CustomersCollection).UpdateOne(context.TODO(), filter, update)
 	if err != nil {
@@ -138,7 +143,8 @@ func ValidateOTP(user string, otp string) (types.ResetPasswordResponse, error) {
 	um := models.CustomersModel{}
 	decOTP, err := utils.Decrypt(um.OTP, os.Getenv("OTP_ENC_KEY"))
 	if err != nil {
-
+		logger.Error("GenerateToken: Error in generating the token Error: ", err)
+		return ResetPasswordResponse, err
 	}
 	if otp == decOTP {
 		token, err := GenerateToken(um)
@@ -186,6 +192,20 @@ func GenerateToken(userResult models.CustomersModel) (string, error) {
 	claims["exp"] = time.Now().Add(time.Hour * 24 * time.Duration(tokenExpiredBy)).Unix()
 
 	return token.SignedString([]byte(os.Getenv("CUSTOMER_JWT_SECRET_KEY")))
+}
+
+func GenerateRefreshToken(userResult models.CustomersModel) (types.RefreshTokenResponse, error) {
+	var tokenRefreshResponse types.RefreshTokenResponse
+	token := jwt.New(jwt.SigningMethodHS256)
+	tokenExpiredBy, _ := strconv.Atoi(os.Getenv("TOKEN_EXPIRY"))
+	claims := token.Claims.(jwt.MapClaims)
+	claims["user_id"] = userResult.ID
+	claims["is_refresh"] = true
+	claims["exp"] = time.Now().Add(time.Hour * 24 * time.Duration(tokenExpiredBy)).Unix()
+	refershToken, err := token.SignedString([]byte(os.Getenv("CUSTOMER_JWT_SECRET_KEY")))
+	tokenRefreshResponse.Token = refershToken
+	tokenRefreshResponse.Phone = userResult.Phone
+	return tokenRefreshResponse, err
 }
 
 func StringToNumber(key string) (int, error) {

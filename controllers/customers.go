@@ -136,7 +136,6 @@ func ForgotPassword(c echo.Context) error {
 		logger.Error("Login: Error in binding. Error: ", err)
 		return utils.HttpErrorResponse(c, http.StatusBadRequest, config.ErrWrongPayload)
 	}
-
 	result, err := services.ForgotPassword(*body)
 	if err != nil {
 		logger.Error("Forgot Password  ", err)
@@ -191,4 +190,27 @@ func ResetPassword(c echo.Context) error {
 	}
 	return utils.HttpSuccessResponse(c, http.StatusOK, config.MsgMpinChanged)
 
+}
+
+func GenerateRefreshToken(c echo.Context) error {
+	tokenString := c.Request().Header.Get("Authorization")
+	if tokenString == "" {
+		return config.ErrTokenMissing
+	}
+	body := &types.RefreshTokenBody{}
+	if err := c.Bind(body); err != nil {
+		logger.Error("ResetPassword: Error in binding. Error: ", err)
+		return utils.HttpErrorResponse(c, http.StatusBadRequest, config.ErrWrongPayload)
+	}
+	customer, err := services.GetUserByMobileNumber(body.Phone)
+	if err != nil {
+		logger.Error("Error in fetching customer ", err)
+		return utils.HttpErrorResponse(c, utils.GetStatusCode(err), err)
+	}
+	result, err := services.GenerateRefreshToken(customer)
+	if err != nil {
+		logger.Error("GenerateRefreshToken: Error in generating the refresh token Error: ", err)
+		return err
+	}
+	return utils.HttpSuccessResponse(c, http.StatusOK, result)
 }

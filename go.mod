@@ -1,4 +1,4 @@
-module business
+module passmanager
 
 go 1.19
 

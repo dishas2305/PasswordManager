@@ -8,8 +8,6 @@ import (
 )
 
 func InitializeRoutes(e *echo.Group) {
-	//e.GET("/health", controllers.HealthCheck)
-	//Members Group
 
 	gCustomers := e.Group("/customers")
 	CustomersGroup(gCustomers)

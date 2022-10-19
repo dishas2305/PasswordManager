@@ -29,8 +29,13 @@ type EditSitesReceiver struct {
 
 func (sr *SitesReceiver) AddSite(userID string) error {
 	mdb := storage.MONGO_DB
+	_, err := GetUserByMobileNumber(userID)
+	if err != nil {
+		logger.Error("GetUserByMobileNumber: Error in fetching customer by mobile number. Error: ", err)
+		return err
+	}
 	sm := models.SitesModel{}
-	sm.UserId = userID
+	sm.Phone = userID
 	sm.URL = sr.SitePayload.URL
 	sm.SiteName = sr.SitePayload.SiteName
 	sm.Folder = sr.SitePayload.Folder
@@ -51,11 +56,11 @@ func (sr *SitesReceiver) AddSite(userID string) error {
 	return nil
 }
 
-func GetSitebyURL(siteurl string) (models.SitesModel, error) {
+func GetSitebyURL(siteurl, phone string) (models.SitesModel, error) {
 	var site models.SitesModel
 	mdb := storage.MONGO_DB
 	filter := bson.M{
-		"url": siteurl,
+		"$and": bson.M{"url": siteurl, "userId": phone},
 	}
 	result := mdb.Collection(models.SitesCollection).FindOne(context.TODO(), filter)
 	err := result.Decode(&site)
@@ -81,12 +86,13 @@ func GetSiteByName(sitename string) (models.SitesModel, error) {
 	return site, nil
 }
 
-func (sr *SitesReceiver) ListSites() ([]models.SitesModel, error) {
+func (sr *SitesReceiver) ListSites(param string) ([]models.SitesModel, error) {
 	mdb := storage.MONGO_DB
-	filter := bson.M{}
+	filter := bson.M{
+		"$or": bson.M{"userId": param, "folder": param},
+	}
 	var sites []models.SitesModel
 	result, _ := mdb.Collection(models.SitesCollection).Find(context.TODO(), filter)
-
 	if err := result.All(context.Background(), &sites); err != nil {
 		logger.Error("func_ListSites: error cur.All() step ", err)
 		return nil, err
@@ -120,11 +126,7 @@ func CopyPassword(sitename string) (types.CopyPasswordResponse, error) {
 func (sr *EditSitesReceiver) EditSite(sitename string) error {
 
 	mdb := storage.MONGO_DB
-	// sitename, err := primitive.ObjectIDFromHex(sitename)
-	// if err != nil {
-	// 	logger.Error("func_EditSite", err)
 
-	// }
 	filter := bson.M{
 		"sitename": sitename,
 	}

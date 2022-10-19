@@ -3,13 +3,9 @@ package types
 import "go.mongodb.org/mongo-driver/bson/primitive"
 
 type CustomerPayload struct {
-	Phone  string `json:"Phone" example:"8978456532"`
-	MPin   string `json:"MPin" example:"1234"`
-	ReMPin string `json:"reMPin" example:"1234"`
-}
-
-type VerifySignupEmailTemplate struct {
-	VerifySignupLink string `validate:"required"`
+	Phone  string `json:"phone" example:"8978456532"`
+	MPin   string `json:"mpin" example:"1234"`
+	ReMPin string `json:"re-mpin" example:"1234"`
 }
 
 type LoginBody struct {
@@ -18,9 +14,10 @@ type LoginBody struct {
 }
 
 type LoginOutput struct {
-	Phone string             `json:"phone"`
-	Token string             `json:"token"`
-	Id    primitive.ObjectID `json:"id"`
+	Phone        string             `json:"phone"`
+	Token        string             `json:"token"`
+	Id           primitive.ObjectID `json:"id"`
+	RefreshToken string             `json:"refresh_token"`
 }
 
 type ForgotPasswordBody struct {
@@ -39,7 +36,15 @@ type ResetPasswordBody struct {
 }
 
 type ResetPasswordResponse struct {
-	Id primitive.ObjectID `json:"id"`
+	Id    primitive.ObjectID `json:"id"`
+	Token string             `json:"token"`
+}
 
+type RefreshTokenBody struct {
+	Phone string `json:"phone" example:"8978456532"`
+}
+
+type RefreshTokenResponse struct {
+	Phone string `json:"phone" example:"8978456532"`
 	Token string `json:"token"`
 }

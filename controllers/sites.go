@@ -31,10 +31,7 @@ import (
 // @Security CustomerBasicAuth
 
 func AddSite(c echo.Context) error {
-	uId := c.Param("userId")
-	fmt.Println(uId)
-	// folder := c.Request().Header.Get("folder")
-	// fmt.Println(folder)
+	phone := c.Param("phone")
 	input := &types.SitePayload{}
 	if err := c.Bind(input); err != nil {
 		logger.Error("func_AddSite: Error in binding. Error: ", err)
@@ -43,12 +40,12 @@ func AddSite(c echo.Context) error {
 	cr := services.SitesReceiver{}
 	cr.SitePayload = *input
 	fmt.Println("cr.SitePayload ", cr.SitePayload)
-	_, err := services.GetSitebyURL(cr.SitePayload.URL)
+	_, err := services.GetSitebyURL(cr.SitePayload.URL, phone)
 	if err == nil {
 		logger.Error("func_CreateCustomer: Record found:", err)
-		return utils.HttpErrorResponse(c, utils.GetStatusCode(config.ErrDuplicateCustomer), config.ErrDuplicateSite)
+		return utils.HttpErrorResponse(c, utils.GetStatusCode(config.ErrDuplicateSite), config.ErrDuplicateSite)
 	}
-	err = cr.AddSite(uId)
+	err = cr.AddSite(phone)
 	if err != nil {
 		logger.Error("func_AddSite:  ", err.Error())
 		return utils.HttpErrorResponse(c, http.StatusBadRequest, config.ErrHttpCallInternalServerError)
@@ -71,8 +68,9 @@ func AddSite(c echo.Context) error {
 // @Security CustomerBasicAuth
 
 func ListSites(c echo.Context) error {
+	param := c.Param("param")
 	sr := services.SitesReceiver{}
-	sites, err := sr.ListSites()
+	sites, err := sr.ListSites(param)
 	if err != nil {
 		logger.Error("func_ListSites:  ", err.Error())
 		return utils.HttpErrorResponse(c, http.StatusBadRequest, err)
@@ -96,7 +94,7 @@ func ListSites(c echo.Context) error {
 // @Security CustomerBasicAuth
 
 func CopyPassword(c echo.Context) error {
-	fmt.Println("insde copy password")
+	//fmt.Println("insde copy password")
 	site := c.Param("sitename")
 	_, err := services.GetSiteByName(site)
 	if err != nil {
