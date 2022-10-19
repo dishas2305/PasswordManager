@@ -185,7 +185,7 @@ func UpdateMPin(user string, otp string) error {
 
 func GenerateToken(userResult models.CustomersModel) (string, error) {
 	token := jwt.New(jwt.SigningMethodHS256)
-	tokenExpiredBy, _ := strconv.Atoi(os.Getenv("TOKEN_EXPIRY"))
+	tokenExpiredBy, _ := strconv.Atoi(os.Getenv("ACCESS_TOKEN_EXPIRY"))
 	claims := token.Claims.(jwt.MapClaims)
 	claims["phone"] = userResult.Phone
 	claims["user_id"] = userResult.ID
@@ -197,7 +197,7 @@ func GenerateToken(userResult models.CustomersModel) (string, error) {
 func GenerateRefreshToken(userResult models.CustomersModel) (types.RefreshTokenResponse, error) {
 	var tokenRefreshResponse types.RefreshTokenResponse
 	token := jwt.New(jwt.SigningMethodHS256)
-	tokenExpiredBy, _ := strconv.Atoi(os.Getenv("TOKEN_EXPIRY"))
+	tokenExpiredBy, _ := strconv.Atoi(os.Getenv("REFRESH_TOKEN_EXPIRY"))
 	claims := token.Claims.(jwt.MapClaims)
 	claims["user_id"] = userResult.ID
 	claims["is_refresh"] = true

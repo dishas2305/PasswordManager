@@ -68,7 +68,7 @@ func AddSite(c echo.Context) error {
 // @Security CustomerBasicAuth
 
 func ListSites(c echo.Context) error {
-	param := c.Param("param")
+	param := c.Param("index")
 	sr := services.SitesReceiver{}
 	sites, err := sr.ListSites(param)
 	if err != nil {

@@ -279,3 +279,17 @@
 {"level":"error","msg":"func GetSitebyURL: Error in (BadValue) $and must be an array","time":"19-10-2022 11:59:13"}
 {"level":"error","msg":"func GetSitebyURL: Error in (BadValue) $and must be an array","time":"19-10-2022 11:59:25"}
 {"level":"error","msg":"func GetSitebyURL: Error in (BadValue) $and must be an array","time":"19-10-2022 12:06:59"}
+{"level":"error","msg":"func GetSitebyURL: Error in (BadValue) $and must be an array","time":"19-10-2022 14:34:25"}
+{"level":"error","msg":"func GetSitebyURL: Error in (BadValue) $and must be an array","time":"19-10-2022 14:34:32"}
+{"level":"error","msg":"func GetSitebyURL: Error in (BadValue) $and must be an array","time":"19-10-2022 14:37:57"}
+{"level":"error","msg":"func_S_GetGrant: Error in mongo: no documents in result","time":"19-10-2022 14:43:30"}
+{"level":"error","msg":"Reset Password  Invalid OTP","time":"19-10-2022 14:44:39"}
+{"level":"error","msg":"func GetSitebyURL: Error in (BadValue) $and must be an array","time":"19-10-2022 14:45:40"}
+{"level":"error","msg":"func GetSitebyURL: Error in (BadValue) $and must be an array","time":"19-10-2022 14:45:43"}
+{"level":"error","msg":"func GetSitebyURL: Error in (BadValue) $and must be an array","time":"19-10-2022 14:53:42"}
+{"level":"error","msg":"func GetSitebyURL: Error in (BadValue) $and must be an array","time":"19-10-2022 14:54:05"}
+{"level":"error","msg":"func GetSitebyURL: Error in mongo: no documents in result","time":"19-10-2022 15:04:01"}
+{"level":"error","msg":"func GetSitebyURL: Error in mongo: no documents in result","time":"19-10-2022 15:04:04"}
+{"level":"error","msg":"func GetSitebyURL: Error in mongo: no documents in result","time":"19-10-2022 15:04:10"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"19-10-2022 15:04:51"}
+{"level":"error","msg":"func_CreateCustomer: Record found:\u003cnil\u003e","time":"19-10-2022 15:05:08"}

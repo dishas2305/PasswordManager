@@ -2,6 +2,7 @@ package services
 
 import (
 	"context"
+	"fmt"
 	"os"
 	"passmanager/models"
 	"passmanager/storage"
@@ -60,7 +61,7 @@ func GetSitebyURL(siteurl, phone string) (models.SitesModel, error) {
 	var site models.SitesModel
 	mdb := storage.MONGO_DB
 	filter := bson.M{
-		"$and": bson.M{"url": siteurl, "userId": phone},
+		"url": siteurl,
 	}
 	result := mdb.Collection(models.SitesCollection).FindOne(context.TODO(), filter)
 	err := result.Decode(&site)
@@ -89,10 +90,11 @@ func GetSiteByName(sitename string) (models.SitesModel, error) {
 func (sr *SitesReceiver) ListSites(param string) ([]models.SitesModel, error) {
 	mdb := storage.MONGO_DB
 	filter := bson.M{
-		"$or": bson.M{"userId": param, "folder": param},
+		"folder": param,
 	}
 	var sites []models.SitesModel
 	result, _ := mdb.Collection(models.SitesCollection).Find(context.TODO(), filter)
+	fmt.Println(result)
 	if err := result.All(context.Background(), &sites); err != nil {
 		logger.Error("func_ListSites: error cur.All() step ", err)
 		return nil, err
@@ -130,9 +132,10 @@ func (sr *EditSitesReceiver) EditSite(sitename string) error {
 	filter := bson.M{
 		"sitename": sitename,
 	}
-	update := bson.M{"$set": bson.M{"userName": sr.EditSitePayload.UserName, "sitePassword": sr.EditSitePayload.SitePassword}}
+	encSitePassword, err := utils.Encrypt(sr.EditSitePayload.SitePassword, os.Getenv("MPIN_ENC_KEY"))
+	update := bson.M{"$set": bson.M{"userName": sr.EditSitePayload.UserName, "sitePassword": encSitePassword}}
 
-	_, err := mdb.Collection(models.SitesCollection).UpdateOne(context.TODO(), filter, update)
+	_, err = mdb.Collection(models.SitesCollection).UpdateOne(context.TODO(), filter, update)
 	if err != nil {
 		return err
 	}

@@ -1,13 +1,13 @@
 package middleware
 
 import (
-	"business/models"
-	"business/storage"
 	"context"
 	"fmt"
 	"net/http"
 	"os"
 	"passmanager/config"
+	"passmanager/models"
+	"passmanager/storage"
 	"passmanager/utils"
 
 	"github.com/dgrijalva/jwt-go"
@@ -42,19 +42,22 @@ func ExtractCustomerTokenID(c echo.Context) (string, error) {
 
 	fmt.Println("token:", token)
 	claims, ok := token.Claims.(jwt.MapClaims)
-	fmt.Println("claims----->>>", claims)
+	result, _ := fmt.Println("claims----->>>", claims["phone"])
+	fmt.Println(result)
 	fmt.Println("token", token.Valid)
 	if ok && token.Valid {
 		uid := fmt.Sprintf("%v", claims["user_id"])
 		c.Request().Header.Set("userId", uid)
 	}
-	find := claims["user_id"]
+
 	filter := bson.M{
-		"_id": find,
+		"userId": result,
 	}
-	result := mdb.Collection(models.CustomersCollection).FindOne(context.TODO(), filter)
+	valid := mdb.Collection(models.CustomersCollection).FindOne(context.TODO(), filter)
 
-	fmt.Println("no error")
-	return "", nil
-
+	if valid != nil {
+		fmt.Println("no error")
+		return "", nil
+	}
+	return "", utils.HttpErrorResponse(c, http.StatusBadRequest, config.ErrInvalidToken)
 }

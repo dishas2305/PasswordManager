@@ -9,7 +9,7 @@ import (
 
 func SitesGroup(e *echo.Group) {
 	e.POST("/:phone/addsite", controllers.AddSite, middleware.ValidateCustomerToken)
-	e.GET("/:param", controllers.ListSites)
+	e.GET("/:index", controllers.ListSites)
 	e.GET("/:sitename/copypassword", controllers.CopyPassword, middleware.ValidateCustomerToken)
 	e.PUT("/:sitename", controllers.EditSite, middleware.ValidateCustomerToken)
 }
