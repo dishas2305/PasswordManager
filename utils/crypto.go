@@ -14,6 +14,7 @@ import (
 
 	"github.com/mergermarket/go-pkcs7"
 	logger "github.com/sirupsen/logrus"
+	"golang.org/x/crypto/bcrypt"
 )
 
 func createHash(key string) string {
@@ -169,4 +170,12 @@ func Decryption(encrypted string) (string, error) {
 
 	cipherText, _ = pkcs7.Unpad(cipherText, aes.BlockSize)
 	return fmt.Sprintf("%s", cipherText), nil
+}
+
+func HashPassword(password string) (string, error) {
+	var passwordBytes = []byte(password)
+
+	hashedPasswordBytes, err := bcrypt.GenerateFromPassword(passwordBytes, bcrypt.MinCost)
+
+	return string(hashedPasswordBytes), err
 }

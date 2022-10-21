@@ -34,23 +34,19 @@ func CreateUser(c *types.CustomerPayload) (interface{}, error) {
 	fmt.Println("inside services user")
 	um := models.CustomersModel{}
 	um.Phone = c.Phone
-	encMPin, err := utils.Encrypt(c.MPin, os.Getenv("MPIN_ENC_KEY"))
+	hashMPin, err := utils.HashPassword(c.MPin)
 	if err != nil {
 		logger.Error("func_CreateUser: Error in encrypt password: ", err)
 		return nil, err
 	}
-	um.MPin = encMPin
+	um.MPin = hashMPin
 	mdb := storage.MONGO_DB
 	_, err = mdb.Collection(models.CustomersCollection).InsertOne(context.TODO(), um)
 	if err != nil {
 		logger.Error("func_CreateUser: ", err)
 		return nil, err
 	}
-	// token, err := GenerateToken(um)
-	// if err != nil {
-	// 	logger.Error("GenerateToken: Error in generating the token Error: ", err)
-	// 	return nil, err
-	// }
+
 	return nil, nil
 }
 
@@ -81,9 +77,26 @@ func Login(payload types.LoginBody) (types.LoginOutput, error) {
 	if user.Phone == "" {
 		return loginOutput, config.ErrUserDoesNotExist
 	}
-	reqMPin := payload.Mpin
-	decMPin, err := utils.Decrypt(user.MPin, os.Getenv("MPIN_ENC_KEY"))
-	if reqMPin == decMPin {
+	// reqMPin := payload.Mpin
+	// decMPin, err := utils.Decrypt(user.MPin, os.Getenv("MPIN_ENC_KEY"))
+	// if reqMPin == decMPin {
+	// token, err := GenerateToken(user)
+	// if err != nil {
+	// 	logger.Error("GenerateToken: Error in generating the token Error: ", err)
+	// 	return loginOutput, err
+	// }
+	// loginOutput.Phone = user.Phone
+	// loginOutput.Id = user.ID
+	// loginOutput.Token = token
+	//
+
+	// 	return loginOutput, nil
+	// } else {
+	// 	return loginOutput, config.ErrInvalidMPin
+	// }
+	hashedMpin, err := utils.HashPassword(payload.Mpin)
+
+	if utils.CheckMpinMatch(hashedMpin, payload.Mpin) {
 		token, err := GenerateToken(user)
 		if err != nil {
 			logger.Error("GenerateToken: Error in generating the token Error: ", err)
@@ -92,17 +105,8 @@ func Login(payload types.LoginBody) (types.LoginOutput, error) {
 		loginOutput.Phone = user.Phone
 		loginOutput.Id = user.ID
 		loginOutput.Token = token
-		rtoken, err := GenerateRefreshToken(user)
-		if err != nil {
-			logger.Error("GenerateToken: Error in generating the token Error: ", err)
-			return loginOutput, err
-		}
-		loginOutput.RefreshToken = rtoken.Token
-
-		return loginOutput, nil
-	} else {
-		return loginOutput, config.ErrInvalidMPin
 	}
+	return loginOutput, err
 }
 
 func ForgotPassword(payload types.ForgotPasswordBody) (types.ForgotPasswordResponse, error) {

@@ -11,6 +11,7 @@ import (
 	"unicode"
 
 	logger "github.com/sirupsen/logrus"
+	"golang.org/x/crypto/bcrypt"
 )
 
 func CheckForNumbers(str string) bool {
@@ -101,4 +102,9 @@ func GenOTP(phone string) (string, string, error) {
 		return encOTP, strOTP, err
 	}
 	return encOTP, strOTP, err
+}
+
+func CheckMpinMatch(hashedMpin, Mpin string) bool {
+	err := bcrypt.CompareHashAndPassword([]byte(hashedMpin), []byte(Mpin))
+	return err == nil
 }

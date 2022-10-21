@@ -14,6 +14,5 @@ func CustomersGroup(e *echo.Group) {
 	e.GET("/forgotpassword", controllers.ForgotPassword)
 	e.PUT("/:mobileNumber/resetpassword", controllers.ResetPassword)
 	e.POST("/refreshtoken", controllers.GenerateRefreshToken, middleware.ValidateCustomerToken)
-	//e.POST("/logout", controllers.logout)
 
 }
